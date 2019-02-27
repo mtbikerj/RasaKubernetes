@@ -1,0 +1,4 @@
+FROM rasa/rasa_nlu:latest-spacy
+WORKDIR /app
+COPY nlu ./agent_nlu
+RUN python -m rasa_nlu.train -c agent_nlu/config.yml -d agent_nlu/data/ -o model --project agent --fixed_model_name default

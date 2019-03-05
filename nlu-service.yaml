@@ -4,11 +4,13 @@ metadata:
   name: nlu
   labels:
     app: chatbot
-    tier: nlu
+    tier: backend
+    service: nlu
 spec:
   type: NodePort
   ports:
   - port: 5000
   selector:
     app: chatbot
-    tier: nlu
+    tier: backend
+    service: nlu

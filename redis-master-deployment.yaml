@@ -3,13 +3,18 @@ kind: Deployment
 metadata:
   name: redis
 spec:
+  selector:
+    matchLabels:
+      app: chatbot
+      tier: backend
+      service: redis
   replicas: 1
   template:
     metadata:
       labels:
         app: chatbot
-        role: master
         tier: backend
+        service: redis
     spec:
       containers:
       - name: redis

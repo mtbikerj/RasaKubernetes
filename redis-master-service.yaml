@@ -3,15 +3,15 @@ kind: Service
 metadata:
   name: redis
   labels:
-    app: redis
-    role: master
+    app: chatbot
     tier: backend
+    service: redis
 spec:
   type: NodePort
   ports:
   - port: 6379
     targetPort: 6379
   selector:
-    app: redis
-    role: master
+    app: chatbot
     tier: backend
+    service: redis

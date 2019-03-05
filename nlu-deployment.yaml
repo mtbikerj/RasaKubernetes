@@ -6,13 +6,15 @@ spec:
   selector:
     matchLabels:
       app: chatbot
-      tier: nlu
+      tier: backend
+      service: nlu
   replicas: 1
   template:
     metadata:
       labels:
         app: chatbot
-        tier: nlu
+        tier: backend
+        service: nlu
     spec:
       containers:
       - name: agent-nlu
@@ -21,8 +23,5 @@ spec:
           - start
           - --path
           - model
-        env:
-        - name: GET_HOSTS_FROM
-          value: dns
         ports:
         - containerPort: 5000

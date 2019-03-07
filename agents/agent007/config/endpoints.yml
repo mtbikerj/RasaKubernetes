@@ -1,0 +1,6 @@
+nlu:
+  url: "http://nlu:5000"
+tracker_store:
+  store_type: redis
+  url: "redis"
+  port: "6379"

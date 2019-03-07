@@ -1,0 +1,5 @@
+FROM rasa/rasa_core:latest
+ARG AGENT
+WORKDIR /app
+COPY agents/$AGENT ./agent
+RUN python -m rasa_core.train -d agent/domain.yml -s agent/stories.md -o agent/models/dialog -c agent/config/config.yml

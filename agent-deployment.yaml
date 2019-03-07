@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent007
+spec:
+  selector:
+    matchLabels:
+      app: chatbot
+      tier: frontend
+      service: bot
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: chatbot
+        tier: frontend
+        service: bot
+    spec:
+      containers:
+      - name: agent
+        image: <PUT YOUR IMAGE NAME HERE>
+        args:
+          - start
+          - --core
+          - agent/models/dialog
+          - -c
+          - rest
+          - --endpoints
+          - agent/config/endpoints.yml
+          - -u
+          - agent/default

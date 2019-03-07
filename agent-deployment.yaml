@@ -29,3 +29,5 @@ spec:
           - agent/config/endpoints.yml
           - -u
           - agent/default
+        ports:
+        - containerPort: 5005

@@ -6,7 +6,6 @@ metadata:
     app: chatbot
     tier: nlu
 spec:
-  type: NodePort
   ports:
   - port: 5000
   selector:

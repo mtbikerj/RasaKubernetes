@@ -7,7 +7,6 @@ metadata:
     tier: backend
     service: nlu
 spec:
-  type: NodePort
   ports:
   - port: 5000
   selector:
